@@ -10,7 +10,8 @@ let
   home.username = "jerry";
   home.homeDirectory = "/home/jerry";
   home.stateVersion = "24.05"; 
-  home.packages = [
+  home.packages = with pkgs; [
+    pkgs.git
   ];
 
   home.file = {
@@ -28,6 +29,12 @@ let
   programs.zsh = {
     enable = true;
     shellAliases = myAliases;
+  };
+
+  programs.git = {
+    enable = true;
+    userName = "shubhexists";
+    userEmail = "shubh622005@gmail.com";
   };
 
   programs.home-manager.enable = true;
